@@ -27,6 +27,14 @@ dependencies {
             "org.junit.jupiter:junit-jupiter-engine:5.7.1")
 }
 
+compileJava {
+    options.encoding = 'UTF-8'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
 
 tasks.withType(Test) {
     systemProperties(System.getProperties())

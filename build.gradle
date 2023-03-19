@@ -4,6 +4,8 @@ plugins {
 }
 
 allure {
+    autoconfigure = true
+    aspectjweaver = true
     version = "2.15.0"
     aspectjVersion = "1.9.6"
     configuration = "testImplementation"

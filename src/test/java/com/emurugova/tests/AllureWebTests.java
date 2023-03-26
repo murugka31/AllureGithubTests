@@ -1,5 +1,6 @@
 package com.emurugova.tests;
 
+import com.emurugova.allure.Layer;
 import com.emurugova.allure.Microservice;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
@@ -15,6 +16,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
+@Layer("web")
 public class AllureWebTests extends TestBase{
 
 private String REPOSOTORIY = "allure-examples/allure-examples";
@@ -61,6 +63,7 @@ private int REQUEST= 29;
    }
 
     @Test
+    @AllureId("16495")
     @DisplayName("Поиск задачи в репозитории по прямой ссылке репозитория")
     @Tags({@Tag("critical"), @Tag("UI-tests")})
     @Owner("allure8")
@@ -82,6 +85,7 @@ private int REQUEST= 29;
     }
 
     @Test
+    @AllureId("16494")
     @DisplayName("Поиск pull request в репозитории неавторизованным пользователем")
     @Tags({@Tag("critical"), @Tag("UI-tests")})
     @Owner("allure8")
@@ -121,6 +125,7 @@ private int REQUEST= 29;
 
 
     @Test
+    @AllureId("16493")
     @DisplayName("Поиск pull request в репозитории по прямой ссылке репозитория")
     @Tags({@Tag("critical"), @Tag("UI-tests")})
     @Owner("allure8")

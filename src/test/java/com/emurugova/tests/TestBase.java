@@ -18,13 +18,20 @@ public class TestBase{
 
     @BeforeAll
     static void beforeAll() {
+
+        String browserSize = System.getProperty("browserSize", "2100x1080");
+        String browser = System.getProperty("browser", "chrome");
+        String browserVersion = System.getProperty("browserVersion", "100");
+
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo",true);
 
         Configuration.remote = format("https://%s:%s@%s", config.getRemoteLogin(), config.getRemotePassword(), config.getRemoteUrl());
-        Configuration.browserSize = "2100x1080";
+        Configuration.browserSize = browserSize;
+        Configuration.browser = browser;
+        Configuration.browserVersion = browserVersion;
         Configuration.baseUrl = "https://github.com";
     }
 

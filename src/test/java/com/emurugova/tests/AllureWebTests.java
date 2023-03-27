@@ -123,7 +123,6 @@ private int REQUEST= 29;
      });
     }
 
-
     @Test
     @AllureId("16493")
     @DisplayName("Поиск pull request в репозитории по прямой ссылке репозитория")
@@ -144,7 +143,5 @@ private int REQUEST= 29;
      step("Проверяем что задача " + ISSUE+ " существует", () -> {
        $(".js-navigation-container.js-active-navigation-container").shouldHave(text("#"+ISSUE));
      });
-    }
-
-
+   }
 }
